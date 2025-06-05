@@ -1,9 +1,10 @@
 import express from "express";
 import cors from "cors";
 
+//Middlewares
+import authMiddleware from "./middlewares/authMiddleware.js";
 // Import routes
 import authRoute from "./routes/authRoute.js";
-import empRouter from "./routes/empRoute.js";
 import branchRouter from "./routes/branchRoutes.js";
 import roleRouter from "./routes/rolesRoute.js";
 import userRouter from "./routes/userRoutes.js";
@@ -26,15 +27,16 @@ app.use(
     credentials: true,
   })
 );
-// Routes
+// Public Routes
 app.use("/auth", authRoute);
-app.use("/employee", empRouter);
-app.use("/branches", branchRouter);
-app.use("/roles", roleRouter);
-app.use("/users", userRouter);
-app.use("/owners", ownerRoutes);
-app.use("/identification", identificationRoutes);
-app.use("/vehicles", vehileRoutes);
+
+// Protected routes
+app.use("/branches", authMiddleware, branchRouter);
+app.use("/roles", authMiddleware, roleRouter);
+app.use("/users", authMiddleware, userRouter);
+app.use("/owners", authMiddleware, ownerRoutes);
+app.use("/identification", authMiddleware, identificationRoutes);
+app.use("/vehicles", authMiddleware, vehileRoutes);
 app.get("/", (req, res) => {
   res.send("<h1>Hello World!</h1>");
 });

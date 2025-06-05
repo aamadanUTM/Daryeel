@@ -91,6 +91,21 @@ inner join vehicle_makes vms on vms.id=vm.make_id;
     return callback(null, results);
   });
 };
+const getVehiclesById = (id, callback) => {
+  const query = `SELECT v.id, v.vin,v.engine_number,v.license_plate, v.year_of_manufacture,v.color,v.fuel_type,v.body_type,v.engine_size_cc,
+v.imported_from,v.vehicle_condition,v.status,vm.model_name,vms.make_name from vehicles v
+inner join vehicle_models vm on vm.id=v.model_id
+inner join vehicle_makes vms on vms.id=vm.make_id
+WHERE v.id = ${id};
+`;
+  db.query(query, (error, results) => {
+    if (error) {
+      console.error("Error executing query:", error);
+      return callback(error, null);
+    }
+    return callback(null, results);
+  });
+};
 export {
   getAllVehicleModelsModel,
   createVehicleModelsModel,
@@ -99,4 +114,5 @@ export {
   createVehicleMakesModel,
   updateVehicleMakesModel,
   getAllVehicles,
+  getVehiclesById,
 };

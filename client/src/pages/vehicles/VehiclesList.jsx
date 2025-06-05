@@ -43,16 +43,32 @@ const VehiclesList = () => {
       header: "VIN No",
     },
     {
-      accessorKey: "engine_number",
-      header: "Engine No",
+      header: "Engine",
+      cell: ({ row }) => (
+        <>
+          {row.original.engine_number}{" "}
+          {row.original.engine_size_cc
+            ? `(${row.original.engine_size_cc} cc)`
+            : ""}
+        </>
+      ),
     },
-    {
-      accessorKey: "model_name",
-      header: "Model",
-    },
+
     {
       accessorKey: "make_name",
       header: "Manufacturer",
+    },
+    {
+      header: "Model",
+      cell: ({ row }) => (
+        <>
+          {row.original.model_name}
+          {row.original.color ? ` - ${row.original.color}` : ""}
+          {row.original.year_of_manufacture
+            ? `(${row.original.year_of_manufacture})`
+            : ""}
+        </>
+      ),
     },
     {
       accessorKey: "fuel_type",
@@ -71,15 +87,17 @@ const VehiclesList = () => {
       header: "Vehicle Condition",
     },
     {
-      id: "actions",
-      header: "Actions",
+      id: "edit",
+      header: "Edit",
       cell: ({ row }) => (
-        <Link
-          to={`/users/${row.original.id}`}
-          className="btn btn-sm btn-primary"
-        >
-          <i className="ri-file-edit-line"></i>
-        </Link>
+        <>
+          <Link
+            to={`/users/${row.original.id}`}
+            className="btn btn-sm btn-primary"
+          >
+            <i className="ri-file-edit-line"></i>
+          </Link>
+        </>
       ),
     },
   ];
@@ -91,7 +109,7 @@ const VehiclesList = () => {
           <CardBody>
             <div className="row">
               <div className="col-12 text-end mb-2">
-                <Link to="/createUser">
+                <Link to="/createVehicle">
                   <button className="btn btn-primary">Create Vehicle</button>
                 </Link>
               </div>

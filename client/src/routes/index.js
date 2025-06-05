@@ -30,6 +30,7 @@ import UpdateOwner from "../pages/Owners/UpdateOwner";
 import VehicleModels from "../pages/vehicles/VehicleModels";
 import VehicleMakes from "../pages/vehicles/VehicleMakes";
 import VehiclesList from "../pages/vehicles/VehiclesList";
+import CreateVehicle from "../pages/vehicles/CreateVehicle";
 
 const authProtectedRoutes = [
   {
@@ -141,6 +142,14 @@ const authProtectedRoutes = [
     component: (
       <RouteWrapper>
         <VehiclesList />
+      </RouteWrapper>
+    ),
+  },
+  {
+    path: "/createVehicle",
+    component: (
+      <RouteWrapper>
+        <CreateVehicle />
       </RouteWrapper>
     ),
   },

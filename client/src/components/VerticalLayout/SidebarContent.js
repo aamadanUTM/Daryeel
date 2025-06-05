@@ -212,7 +212,7 @@ class SidebarContent extends Component {
                     to="/vehiclesList"
                     onClick={(e) => this.handleMenuClick(e, e.target)}
                   >
-                    {this.props.t("Registered Vehicles")}
+                    {this.props.t("Vehicles")}
                   </Link>
                 </li>
               </ul>

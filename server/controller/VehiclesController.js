@@ -6,6 +6,7 @@ import {
   createVehicleMakesModel,
   updateVehicleMakesModel,
   getAllVehicles,
+  getVehiclesById,
 } from "../models/VehicleModels.js";
 
 export const getVehicleModels = (req, res) => {
@@ -100,5 +101,19 @@ export const getVehicles = (req, res) => {
       return res.status(500).json({ error: "Internal server error" });
     }
     res.status(200).json(results);
+  });
+};
+
+export const getVehicleById = (req, res) => {
+  const { id } = req.params;
+  getVehiclesById(id, (error, results) => {
+    if (error) {
+      console.error("Error fetching vehicle by ID:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+    if (results.length === 0) {
+      return res.status(404).json({ message: "Vehicle not found" });
+    }
+    res.status(200).json(results[0]);
   });
 };

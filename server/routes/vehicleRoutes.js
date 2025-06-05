@@ -5,7 +5,7 @@ import {
   getVehicleModels,
   updateVehicleModels,
   getVehicles,
-  //   getVehicleById,
+  getVehicleById,
   //   getVehicleMakeById,
   //   getVehicleModelById,
   getVehicleMakes,
@@ -24,7 +24,7 @@ router.post("/vehicle-models", createVehicleModels);
 router.put("/vehicle-models/:id", updateVehicleModels);
 
 router.get("/getvehicles", getVehicles);
-// router.get("/vehicles/:id", getVehicleById);
+router.get("/vehicles/:id", getVehicleById);
 
 router.get("/vehicle-makes", getVehicleMakes);
 router.post("/vehicle-makes", createVehicleMakes);
