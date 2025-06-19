@@ -1020,7 +1020,20 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/registrations/vehicle-registrations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"registrations",
+								"vehicle-registrations",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
