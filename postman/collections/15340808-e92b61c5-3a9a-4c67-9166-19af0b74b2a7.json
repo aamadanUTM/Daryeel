@@ -396,7 +396,20 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/branches/getbranch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"branches",
+								"getbranch",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
