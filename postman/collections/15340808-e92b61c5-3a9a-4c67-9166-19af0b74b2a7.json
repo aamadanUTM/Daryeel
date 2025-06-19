@@ -992,7 +992,23 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usr_fullName\":\"Abdisalan Abdullahi Mohamed\",\r\n    \"usr_address\":\"Wadajir\",\r\n    \"usr_branch\":\"2\",\r\n    \"usr_role\":\"1\",\r\n    \"usr_username\":\"admin\",\r\n    \"usr_password\":\"123\",\r\n    \"usr_email\":\"abdiMH@gmail.com\",\r\n    \"usr_phone\":\"0615448866\",\r\n    \"usr_photo\":\"PHOTO\",\r\n    \"usr_gender\":\"Male\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/registrations/vehicle-registrations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"registrations",
+								"vehicle-registrations"
+							]
+						}
 					},
 					"response": []
 				},
