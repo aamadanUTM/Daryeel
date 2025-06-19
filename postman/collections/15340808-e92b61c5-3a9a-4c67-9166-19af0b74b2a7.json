@@ -941,7 +941,24 @@
 							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"own_fullName\":\"Abdisalan Abdullahi\",\r\n    \"own_gender\":\"Male\",\r\n    \"own_dob\":\"2010-10-10\",\r\n    \"own_phone\":615443322,\r\n    \"own_email\":\"asad@gmail.com\",\r\n    \"own_address\":\"Ceelqalaw\",\r\n    \"own_identification\":1,\r\n    \"own_identification_number\":\"ID018265\",\r\n    \"own_branch\":1\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/vehicles/vehicles/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"vehicles",
+										"1"
+									]
+								}
 							},
 							"response": []
 						}
