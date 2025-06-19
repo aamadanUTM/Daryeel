@@ -1,0 +1,1106 @@
+{
+	"info": {
+		"_postman_id": "15340808-e92b61c5-3a9a-4c67-9166-19af0b74b2a7",
+		"name": "Daryeel",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"id": "15340808-86683b5d-a3ee-476d-97c8-d5eebe5ed572",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usr_fullName\":\"Abdisalan Abdullahi Mohamed\",\r\n    \"usr_address\":\"Wadajir\",\r\n    \"usr_branch\":\"2\",\r\n    \"usr_role\":\"1\",\r\n    \"usr_username\":\"admin\",\r\n    \"usr_password\":\"123\",\r\n    \"usr_email\":\"abdiMH@gmail.com\",\r\n    \"usr_phone\":\"0615448866\",\r\n    \"usr_photo\":\"PHOTO\",\r\n    \"usr_gender\":\"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/createUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"id": "15340808-d3809464-a80a-4393-9215-0e3761d55590",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/getAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Status",
+					"id": "15340808-5e54c40f-179c-4ec8-95c5-d08c282ffc26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/updateStatus/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"updateStatus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single User",
+					"id": "15340808-3fe361b2-66c4-4f5d-a727-12b96ef42772",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/getUser/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"getUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update User",
+					"id": "15340808-cffe9cc7-3a5e-4d97-8d3c-58499b15e783",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/updateUser/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"updateUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0847e378-29a7-4674-9b82-e59582f80e71",
+								"exec": [
+									"var template = `\r",
+									"<canvas id=\"myChart\" height=\"75\"></canvas>\r",
+									"\r",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> \r",
+									"\r",
+									"<script>\r",
+									"    var ctx = document.getElementById(\"myChart\");\r",
+									"\r",
+									"    var myChart = new Chart(ctx, {\r",
+									"        type: \"bar\",\r",
+									"        data: {\r",
+									"            labels: [],\r",
+									"            datasets: [{\r",
+									"                data: [],\r",
+									"                \r",
+									"                // Change these colours to customize the chart\r",
+									"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\"],\r",
+									"            }]\r",
+									"        },\r",
+									"        options: {\r",
+									"            legend: { display: false },\r",
+									"            title: {\r",
+									"                display: true,\r",
+									"                text: 'Role Data'\r",
+									"            },\r",
+									"            scales: {\r",
+									"                xAxes: [{\r",
+									"                    display: true,\r",
+									"                    scaleLabel: {\r",
+									"                        display: true,\r",
+									"                        labelString: 'Roles'\r",
+									"                    }\r",
+									"                }],\r",
+									"                yAxes: [{\r",
+									"                    display: true,\r",
+									"                    scaleLabel: {\r",
+									"                        display: true,\r",
+									"                        labelString: 'Count'\r",
+									"                    }\r",
+									"                }]\r",
+									"            }\r",
+									"        }\r",
+									"\r",
+									"    });\r",
+									"\r",
+									"    // Access the data passed to pm.visualizer.set() from the JavaScript\r",
+									"    // code of the Visualizer template\r",
+									"    pm.getData(function (err, value) {\r",
+									"        myChart.data.datasets[0].data = value.response.map(role => role.is_active);\r",
+									"        myChart.data.labels = value.response.map(role => role.name);\r",
+									"        myChart.update();\r",
+									"    });\r",
+									"\r",
+									"</script>`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    var res = pm.response.json();\r",
+									"    \r",
+									"    var visualizerData = {\r",
+									"        \r",
+									"        // Labels take an array of strings\r",
+									"        labels: res.response.map(role => role.name),\r",
+									"        \r",
+									"        // Data takes an array of numbers\r",
+									"        data: res.response.map(role => role.is_active)\r",
+									"    };\r",
+									"\r",
+									"    return {response: visualizerData};\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "15340808-b6bc02a9-0a66-4833-a8f1-0ba07ca7c6a6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/roles/getAllRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"roles",
+								"getAllRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role Status",
+					"id": "15340808-6ee264b5-968c-4659-ae66-9fd1ea5b207e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/roles/updateRoleStatus/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"roles",
+								"updateRoleStatus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"id": "15340808-b4b55c83-7e3a-4442-8a71-dd002f53f799",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role_name\":\"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/roles/updateRole/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"roles",
+								"updateRole",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role",
+					"id": "15340808-343edee8-b9df-4f20-aa24-a98eaafa6f56",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role_name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/roles/createRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"roles",
+								"createRole"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "15340808-77803d02-2ba9-4bb0-ac2d-9596b9ab3cf2"
+		},
+		{
+			"name": "Branches",
+			"item": [
+				{
+					"name": "Get Branches",
+					"id": "15340808-db66a1b5-1bc7-4300-bbd3-cbdcaf001d86",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/branches/getbranches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"branches",
+								"getbranches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Branch By ID",
+					"id": "15340808-9149f1a2-71c1-46b6-9806-1a975b199e26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "15340808-d16eb9d4-103e-4dad-a2b5-b38aa6492c9b"
+		},
+		{
+			"name": "Owners",
+			"item": [
+				{
+					"name": "Get All owners",
+					"id": "15340808-c56c1567-e25c-40dc-a36a-dd944b1fdf33",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usr_fullName\":\"Abdisalan Abdullahi Mohamed\",\r\n    \"usr_address\":\"Wadajir\",\r\n    \"usr_branch\":\"2\",\r\n    \"usr_role\":\"1\",\r\n    \"usr_username\":\"admin\",\r\n    \"usr_password\":\"123\",\r\n    \"usr_email\":\"abdiMH@gmail.com\",\r\n    \"usr_phone\":\"0615448866\",\r\n    \"usr_photo\":\"PHOTO\",\r\n    \"usr_gender\":\"Male\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/owners/getAllowners",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"owners",
+								"getAllowners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Owner",
+					"id": "15340808-1eb7bb2f-1408-4da5-98de-b95b68b95c9a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"own_fullName\":\"Abdisalan Abdullahi\",\r\n    \"own_gender\":\"Male\",\r\n    \"own_dob\":\"2010-10-10\",\r\n    \"own_phone\":615443322,\r\n    \"own_email\":\"asad@gmail.com\",\r\n    \"own_address\":\"Ceelqalaw\",\r\n    \"own_identification\":1,\r\n    \"own_identification_number\":\"ID018265\",\r\n    \"own_branch\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/owners/createOwner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"owners",
+								"createOwner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Owner By ID",
+					"id": "15340808-701c0089-dbb4-450b-97f2-3f2332baa922",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"own_fullName\":\"Abdisalan Abdullahi\",\r\n    \"own_gender\":\"Male\",\r\n    \"own_dob\":\"2010-10-10\",\r\n    \"own_phone\":615443322,\r\n    \"own_email\":\"asad@gmail.com\",\r\n    \"own_address\":\"Ceelqalaw\",\r\n    \"own_identification\":1,\r\n    \"own_identification_number\":\"ID018265\",\r\n    \"own_branch\":1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/owners/getOwnerById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"owners",
+								"getOwnerById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "15340808-add29ab7-694b-4937-b399-f3bedb71db05"
+		},
+		{
+			"name": "Identifications",
+			"item": [
+				{
+					"name": "Identifications",
+					"id": "15340808-ed666057-3367-4e31-ae6b-c94d38fb2849",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/identification/getIdentificaton",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"identification",
+								"getIdentificaton"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "15340808-a90900cb-f256-4ebe-8fcc-5f6a2e7e26a1"
+		},
+		{
+			"name": "Vehicles",
+			"item": [
+				{
+					"name": "Vehicle Models",
+					"item": [
+						{
+							"name": "Get Vehicle Models",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "410a122d-2c6c-48a3-a07f-43ef584670a7",
+										"exec": [
+											"var template = `\r",
+											"<canvas id=\"myChart\" height=\"75\"></canvas>\r",
+											"\r",
+											"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> \r",
+											"\r",
+											"<script>\r",
+											"    var ctx = document.getElementById(\"myChart\");\r",
+											"\r",
+											"    var myChart = new Chart(ctx, {\r",
+											"        type: \"bar\",\r",
+											"        data: {\r",
+											"            labels: [],\r",
+											"            datasets: [{\r",
+											"                data: [],\r",
+											"                \r",
+											"                // Change these colours to customize the chart\r",
+											"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\"],\r",
+											"            }]\r",
+											"        },\r",
+											"        options: {\r",
+											"            legend: { display: false },\r",
+											"            title: {\r",
+											"                display: true,\r",
+											"                text: 'Vehicle Models'\r",
+											"            },\r",
+											"            scales: {\r",
+											"                xAxes: [{\r",
+											"                    display: true,\r",
+											"                    scaleLabel: {\r",
+											"                        display: true,\r",
+											"                        labelString: 'Model Name'\r",
+											"                    }\r",
+											"                }],\r",
+											"                yAxes: [{\r",
+											"                    display: true,\r",
+											"                    scaleLabel: {\r",
+											"                        display: true,\r",
+											"                        labelString: 'Make ID'\r",
+											"                    }\r",
+											"                }]\r",
+											"            }\r",
+											"        }\r",
+											"\r",
+											"    });\r",
+											"\r",
+											"    // Access the data passed to pm.visualizer.set() from the JavaScript\r",
+											"    // code of the Visualizer template\r",
+											"    pm.getData(function (err, value) {\r",
+											"        myChart.data.datasets[0].data = value.response.map(item => item.make_id);\r",
+											"        myChart.data.labels = value.response.map(item => item.model_name);\r",
+											"        myChart.update();\r",
+											"    });\r",
+											"\r",
+											"</script>`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    var res = pm.response.json();\r",
+											"    \r",
+											"    var visualizerData = {\r",
+											"        \r",
+											"        // Labels take an array of strings\r",
+											"        labels: res.map(item => item.model_name),\r",
+											"        \r",
+											"        // Data takes an array of numbers\r",
+											"        data: res.map(item => item.make_id)\r",
+											"    };\r",
+											"\r",
+											"    return {response: visualizerData};\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "15340808-d271cf94-b74d-4e15-9bf0-a57a041ac019",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"own_fullName\":\"Abdisalan Abdullahi\",\r\n    \"own_gender\":\"Male\",\r\n    \"own_dob\":\"2010-10-10\",\r\n    \"own_phone\":615443322,\r\n    \"own_email\":\"asad@gmail.com\",\r\n    \"own_address\":\"Ceelqalaw\",\r\n    \"own_identification\":1,\r\n    \"own_identification_number\":\"ID018265\",\r\n    \"own_branch\":1\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/vehicles/vehicle-models",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"vehicle-models"
+									]
+								},
+								"description": "## Endpoint Description: Retrieve Vehicle Models\n\nThis endpoint allows clients to retrieve a list of vehicle models from the system. It is a **GET** request to the URL `http://localhost:5000/vehicles/vehicle-models`.\n\n### Response Structure\n\nUpon a successful request, the server responds with a status code of **200** and a JSON array containing the following structure for each vehicle model:\n\n- **id** (integer): The unique identifier for the vehicle model.\n    \n- **model_name** (string): The name of the vehicle model.\n    \n- **model_code** (string): The code associated with the vehicle model.\n    \n- **make_id** (integer): The identifier for the make of the vehicle.\n    \n- **make_name** (string): The name of the make of the vehicle.\n    \n\nExample Response:\n\n``` json\n[\n    {\n        \"id\": 0,\n        \"model_name\": \"\",\n        \"model_code\": \"\",\n        \"make_id\": 0,\n        \"make_name\": \"\"\n    }\n]\n\n ```\n\nThis endpoint is useful for applications needing to display or process vehicle model information based on the owner's details."
+							},
+							"response": []
+						},
+						{
+							"name": "Create Vehicle Models",
+							"id": "15340808-ec950f23-058f-4359-9ce8-d6c5b7bb5231",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"model_name\":\"Test\",\r\n    \"model_code\":\"TST\",\r\n    \"make_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/vehicles/vehicle-models",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"vehicle-models"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "15340808-070b732b-0c05-4ecb-9cea-c10e63001e42"
+				},
+				{
+					"name": "Vehicle Makes",
+					"item": [
+						{
+							"name": "Update Vehicle Makes",
+							"id": "15340808-97ce00d9-5683-4ef1-ad17-c61e982e0260",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"make_name\": \"Ayub\",\r\n    \"make_code\": \"Ayub\",\r\n    \"make_id\": 12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/vehicles/vehicle-makes/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"vehicle-makes",
+										"12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vehicle Makes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1a919240-0d44-4445-9fd0-e4ebd3b9a9f7",
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>ID</th>\r",
+											"        <th>Make Name</th>\r",
+											"        <th>Make Code</th>\r",
+											"    </tr>\r",
+											"    \r",
+											"    {{#each response}}\r",
+											"        <tr>\r",
+											"            <td>{{id}}</td>\r",
+											"            <td>{{make_name}}</td>\r",
+											"            <td>{{make_code}}</td>\r",
+											"        </tr>\r",
+											"    {{/each}}\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return {response: pm.response.json()}\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "15340808-b00bfec4-0475-442b-968c-573e53b145b2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"own_fullName\":\"Abdisalan Abdullahi\",\r\n    \"own_gender\":\"Male\",\r\n    \"own_dob\":\"2010-10-10\",\r\n    \"own_phone\":615443322,\r\n    \"own_email\":\"asad@gmail.com\",\r\n    \"own_address\":\"Ceelqalaw\",\r\n    \"own_identification\":1,\r\n    \"own_identification_number\":\"ID018265\",\r\n    \"own_branch\":1\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/vehicles/vehicle-makes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"vehicle-makes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "15340808-6aa86893-ec74-482e-94b5-297cb807c1fc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"make_name\":\"faaruuq\",\r\n    \"make_code\":\"FRQ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/vehicles/vehicle-makes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"vehicle-makes"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "15340808-e9f82e77-f426-460a-b9b7-f174a8aa3c14"
+				},
+				{
+					"name": "Vehicles",
+					"item": [
+						{
+							"name": "Get Vehicles",
+							"id": "15340808-26d7e83d-8be7-4a77-89f7-1052bbdadfab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"id": "15340808-37a7b80d-eb6b-4a4a-a96c-5256af87f5a1",
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjU4NjYxNzIsImV4cCI6MTY2NTg4Nzc3Mn0.VDkj76vQykI9j4XoCKYCch7g6s-_lJBkoxgK2Mrb3F4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:5000/vehicles/getvehicles",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"vehicles",
+												"getvehicles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:4000"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3130"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"c3a-J5uy+aqrefOY0Zrf3Jo49WfcZlI\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 04 Jun 2025 12:50:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n    {\n        \"id\": 1,\n        \"vin\": \"VIN00000001\",\n        \"engine_number\": \"ENG000001\",\n        \"license_plate\": \"SO1234A\",\n        \"year_of_manufacture\": 2018,\n        \"color\": \"White\",\n        \"fuel_type\": \"Petrol\",\n        \"body_type\": \"SUV\",\n        \"engine_size_cc\": \"1998\",\n        \"imported_from\": \"Japan\",\n        \"vehicle_condition\": \"Second-hand\",\n        \"status\": \"Active\",\n        \"model_name\": \"Corolla\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 2,\n        \"vin\": \"VIN00000002\",\n        \"engine_number\": \"ENG000002\",\n        \"license_plate\": \"SO1235B\",\n        \"year_of_manufacture\": 2020,\n        \"color\": \"Black\",\n        \"fuel_type\": \"Diesel\",\n        \"body_type\": \"Pickup\",\n        \"engine_size_cc\": \"2499\",\n        \"imported_from\": \"UAE\",\n        \"vehicle_condition\": \"Brand New\",\n        \"status\": \"Active\",\n        \"model_name\": \"Hilux\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 3,\n        \"vin\": \"VIN00000003\",\n        \"engine_number\": \"ENG000003\",\n        \"license_plate\": \"SO1236C\",\n        \"year_of_manufacture\": 2016,\n        \"color\": \"Silver\",\n        \"fuel_type\": \"Hybrid\",\n        \"body_type\": \"Sedan\",\n        \"engine_size_cc\": \"1498\",\n        \"imported_from\": \"Japan\",\n        \"vehicle_condition\": \"Second-hand\",\n        \"status\": \"Active\",\n        \"model_name\": \"Land Cruiser\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 4,\n        \"vin\": \"VIN00000004\",\n        \"engine_number\": \"ENG000004\",\n        \"license_plate\": \"SO1237D\",\n        \"year_of_manufacture\": 2019,\n        \"color\": \"Red\",\n        \"fuel_type\": \"Petrol\",\n        \"body_type\": \"Hatchback\",\n        \"engine_size_cc\": \"1399\",\n        \"imported_from\": \"South Korea\",\n        \"vehicle_condition\": \"Brand New\",\n        \"status\": \"Active\",\n        \"model_name\": \"Premio\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 5,\n        \"vin\": \"VIN00000005\",\n        \"engine_number\": \"ENG000005\",\n        \"license_plate\": \"SO1238E\",\n        \"year_of_manufacture\": 2017,\n        \"color\": \"Gray\",\n        \"fuel_type\": \"CNG\",\n        \"body_type\": \"Van / Minivan\",\n        \"engine_size_cc\": \"1799\",\n        \"imported_from\": \"India\",\n        \"vehicle_condition\": \"Second-hand\",\n        \"status\": \"Active\",\n        \"model_name\": \"Probox\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 6,\n        \"vin\": \"VIN00000006\",\n        \"engine_number\": \"ENG000006\",\n        \"license_plate\": \"SO1239F\",\n        \"year_of_manufacture\": 2015,\n        \"color\": \"Blue\",\n        \"fuel_type\": \"Diesel\",\n        \"body_type\": \"Bus / Minibus\",\n        \"engine_size_cc\": \"2999\",\n        \"imported_from\": \"China\",\n        \"vehicle_condition\": \"Second-hand\",\n        \"status\": \"Active\",\n        \"model_name\": \"Axio\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 7,\n        \"vin\": \"VIN00000007\",\n        \"engine_number\": \"ENG000007\",\n        \"license_plate\": \"SO1240G\",\n        \"year_of_manufacture\": 2021,\n        \"color\": \"Green\",\n        \"fuel_type\": \"Electric\",\n        \"body_type\": \"Crossover\",\n        \"engine_size_cc\": \"0\",\n        \"imported_from\": \"Germany\",\n        \"vehicle_condition\": \"Brand New\",\n        \"status\": \"Active\",\n        \"model_name\": \"Vitz\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 8,\n        \"vin\": \"VIN00000008\",\n        \"engine_number\": \"ENG000008\",\n        \"license_plate\": \"SO1241H\",\n        \"year_of_manufacture\": 2014,\n        \"color\": \"Beige\",\n        \"fuel_type\": \"LPG\",\n        \"body_type\": \"Truck / Lorry\",\n        \"engine_size_cc\": \"3499\",\n        \"imported_from\": \"Turkey\",\n        \"vehicle_condition\": \"Second-hand\",\n        \"status\": \"Active\",\n        \"model_name\": \"Allion\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 9,\n        \"vin\": \"VIN00000009\",\n        \"engine_number\": \"ENG000009\",\n        \"license_plate\": \"SO1242I\",\n        \"year_of_manufacture\": 2022,\n        \"color\": \"Brown\",\n        \"fuel_type\": \"Plug-in Hybrid\",\n        \"body_type\": \"Wagon\",\n        \"engine_size_cc\": \"1599\",\n        \"imported_from\": \"Japan\",\n        \"vehicle_condition\": \"Brand New\",\n        \"status\": \"Active\",\n        \"model_name\": \"Corolla\",\n        \"make_name\": \"Toyota\"\n    },\n    {\n        \"id\": 10,\n        \"vin\": \"VIN00000010\",\n        \"engine_number\": \"ENG000010\",\n        \"license_plate\": \"SO1243J\",\n        \"year_of_manufacture\": 2013,\n        \"color\": \"Gold\",\n        \"fuel_type\": \"Petrol\",\n        \"body_type\": \"Bajaj\",\n        \"engine_size_cc\": \"998\",\n        \"imported_from\": \"India\",\n        \"vehicle_condition\": \"Second-hand\",\n        \"status\": \"Active\",\n        \"model_name\": \"Hilux\",\n        \"make_name\": \"Toyota\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get Vehicle By ID",
+							"id": "15340808-fb73237f-aa85-4a81-9c21-e4632e901ee0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "15340808-58998123-65cf-403c-b4fa-6f5ee1d19a54"
+				}
+			],
+			"id": "15340808-57f11683-2f0b-4a47-8261-e0cefec9262a"
+		},
+		{
+			"name": "Registrations",
+			"item": [
+				{
+					"name": "Get All Registrations",
+					"id": "15340808-f39d5d78-9cdc-4796-890f-f6f124827714",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicle Registration By ID",
+					"id": "15340808-2ae08c22-1f0b-44cf-a14e-a26ddf6b1ab5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "15340808-fa7dbd18-806b-4b1d-a654-ab5285c714ea"
+		},
+		{
+			"name": "Registration Fees",
+			"item": [
+				{
+					"name": "Get Registration fees",
+					"id": "15340808-618be0c3-35f3-47c8-bce3-fadb5193d067",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/fees/registration-fees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"fees",
+								"registration-fees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Registration Fee",
+					"id": "15340808-0f29893a-6e9c-4db2-bd82-3c3f70dc867c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"purpose\":\"Taxi\",\r\n    \"fee\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/fees/registration-fees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"fees",
+								"registration-fees"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "15340808-924c3880-a074-43bf-a205-42691ea27ded"
+		},
+		{
+			"name": "Login",
+			"id": "15340808-52b1b9a8-e41b-4136-88ba-e8e94275c5b7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "250c7d58-1ed2-4107-b1a9-c785dad51498",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f6c1161e-c289-44b0-becf-5a88f961f69e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
