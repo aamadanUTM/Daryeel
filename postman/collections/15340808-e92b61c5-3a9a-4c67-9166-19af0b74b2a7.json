@@ -838,7 +838,24 @@
 							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjU4NjYxNzIsImV4cCI6MTY2NTg4Nzc3Mn0.VDkj76vQykI9j4XoCKYCch7g6s-_lJBkoxgK2Mrb3F4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/vehicles/getvehicles",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"vehicles",
+										"getvehicles"
+									]
+								}
 							},
 							"response": [
 								{
